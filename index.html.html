@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>JM | Welcome, Champion</title>
+<meta name="theme-color" content="#000000">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{--bg:#000;--fg:#f5f5f7;--mute:rgba(245,245,247,.55);--line:rgba(255,255,255,.1);--glass:rgba(255,255,255,.05);--serif:Montserrat,"Segoe UI",Arial,sans-serif;--sans:Montserrat,"Segoe UI",Arial,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-weight:500;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:20;display:flex;gap:4px;align-items:center;padding:6px;border:1px solid var(--line);border-radius:999px;background:rgba(20,20,22,.6);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);max-width:calc(100% - 24px);opacity:0;animation:fade 1s 1.2s forwards}
+nav a{padding:8px 14px;border-radius:999px;font-size:13px;color:var(--mute);transition:.25s;white-space:nowrap}
+nav a:hover{color:var(--fg);background:var(--glass)}
+nav .mk{font-family:var(--serif);font-weight:800;font-size:16px;color:var(--fg);padding:4px 14px}
+@media(max-width:520px){nav a.h{display:none}}
+.hero{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:90px 24px 60px;position:relative;overflow:hidden}
+.glow{position:absolute;inset:-20%;background:radial-gradient(40% 35% at 50% 45%,rgba(255,255,255,.14),transparent 70%),radial-gradient(30% 30% at 20% 80%,rgba(120,140,255,.12),transparent 70%),radial-gradient(30% 30% at 82% 75%,rgba(255,170,120,.09),transparent 70%);animation:drift 14s ease-in-out infinite alternate;pointer-events:none}
+@keyframes drift{to{transform:translate3d(2%,-3%,0) scale(1.06)}}
+@keyframes fade{to{opacity:1}}
+@keyframes rise{from{opacity:0;transform:translateY(18px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
+.logo{width:clamp(130px,26vw,190px);aspect-ratio:1;position:relative;z-index:1;opacity:0;animation:rise 1.4s .2s forwards}
+.logo svg{width:100%;height:100%;overflow:visible}
+.ring{stroke-dasharray:540;stroke-dashoffset:540;animation:draw 2s .3s forwards ease-out}
+@keyframes draw{to{stroke-dashoffset:0}}
+.lt{font-family:Montserrat,Arial,sans-serif;font-weight:900;font-size:64px;fill:#f5f5f7}
+.lj{animation:jm 1.6s 1.4s ease-in-out infinite alternate;transform:translateY(-13px)}
+.lm{animation:jm 1.6s 1.4s ease-in-out infinite alternate-reverse;transform:translateY(-13px)}
+@keyframes jm{from{transform:translateY(-13px)}to{transform:translateY(13px)}}
+svg text{font-family:Montserrat,Arial,sans-serif!important}
+.welcome{position:relative;z-index:1;margin-top:34px;opacity:0;animation:rise 1.4s 1.1s forwards}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--mute)}
+.welcome h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,4.8vw,52px);line-height:1.12;margin-top:14px;letter-spacing:-.02em}
+.welcome h1 em{font-style:normal;color:rgba(255,255,255,.72)}
+.cta{position:relative;z-index:1;margin-top:34px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;opacity:0;animation:rise 1.2s 1.9s forwards}
+.btn{padding:13px 26px;border-radius:999px;font-size:14px;font-weight:500;border:1px solid var(--line);background:var(--glass);transition:.25s}
+.btn.p{background:var(--fg);color:#000;border-color:var(--fg)}
+.btn:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.35)}
+.cue{position:absolute;bottom:26px;font-size:11px;letter-spacing:.25em;text-transform:uppercase;color:var(--mute);opacity:0;animation:fade 1s 2.6s forwards}
+section{padding:110px 24px;max-width:1080px;margin:0 auto}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s}
+.rv.in{opacity:1;transform:none}
+h2{font-family:var(--serif);font-weight:800;font-size:clamp(26px,4.4vw,46px);line-height:1.12;letter-spacing:-.02em;margin-top:14px;max-width:760px}
+h2 span{color:var(--mute)}
+.lead{color:var(--mute);margin-top:18px;max-width:560px;font-size:17px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:48px}
+.card{border:1px solid var(--line);background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));border-radius:24px;padding:22px;transition:.35s}
+.card:hover{transform:translateY(-6px);border-color:rgba(255,255,255,.28)}
+.tee{aspect-ratio:1/1.05;border-radius:16px;background:radial-gradient(circle at 50% 30%,rgba(255,255,255,.08),transparent 70%),#0b0b0d;display:grid;place-items:center;margin-bottom:18px}
+.tee svg{width:78%}
+.num{font-size:12px;color:var(--mute);letter-spacing:.2em}
+.card h3{font-family:var(--serif);font-weight:700;font-size:21px;margin-top:4px}
+.card p{color:var(--mute);font-size:14px;margin-top:6px}
+.tag{display:inline-block;margin-top:14px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:4px 12px;color:var(--mute)}
+.pt{text-align:center;margin:0 auto}
+.pt h2{margin-left:auto;margin-right:auto}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:44px;text-align:left}
+.cols div{border-top:1px solid var(--line);padding-top:18px}
+.cols b{font-weight:500;display:block;margin-bottom:6px}
+.cols span{color:var(--mute);font-size:15px}
+.story{border:1px solid var(--line);border-radius:28px;padding:clamp(28px,6vw,64px);background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.01))}
+.story p{color:var(--mute);margin-top:18px;max-width:640px;font-size:17px}
+.story p strong{color:var(--fg);font-weight:400}
+.join{text-align:center;padding-bottom:140px}
+.join h2{margin:12px auto 0}
+.join .cta{opacity:1;animation:none}
+.sub{margin-top:14px;font-size:12px;color:var(--mute);letter-spacing:.08em}
+footer{border-top:1px solid var(--line);padding:34px 24px calc(34px + env(safe-area-inset-bottom,0px));text-align:center;color:var(--mute);font-size:13px}
+footer .mk{font-family:var(--serif);font-weight:900;font-size:26px;color:var(--fg)}
+.view{display:none!important}
+.view.on{display:flex!important;animation:enter .8s ease both}
+section.view.on{flex-direction:column;justify-content:center;min-height:100vh;min-height:100svh;padding-top:110px;padding-bottom:70px}
+@keyframes enter{from{opacity:0;transform:translateY(14px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+nav a.act{color:var(--fg);background:var(--glass)}
+@media(max-width:520px){nav a{padding:8px 10px;font-size:12px}nav .mk{padding:4px 10px}}
+body::before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(35% 30% at 20% 25%,rgba(120,140,255,.10),transparent 70%),radial-gradient(35% 30% at 80% 75%,rgba(255,170,120,.07),transparent 70%);animation:drift 16s ease-in-out infinite alternate}
+h2 span{background:linear-gradient(90deg,rgba(255,255,255,.35),#fff,rgba(255,255,255,.35));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-9px)}}
+.cols div{animation:bob 4s ease-in-out infinite alternate}
+.cols div:nth-child(2){animation-delay:-1.3s}.cols div:nth-child(3){animation-delay:-2.6s}
+.tee svg{animation:tilt 5s ease-in-out infinite alternate}
+@keyframes tilt{from{transform:translateY(4px) rotate(-1.5deg)}to{transform:translateY(-6px) rotate(1.5deg)}}
+.card:nth-child(2) .tee svg{animation-delay:-1.7s}.card:nth-child(3) .tee svg{animation-delay:-3.4s}
+.story{position:relative;overflow:hidden}
+.story::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 40%,rgba(255,255,255,.07) 50%,transparent 60%);transform:translateX(-100%);animation:sweep 7s ease-in-out infinite}
+@keyframes sweep{to{transform:translateX(100%)}}
+.join .btn.p{animation:pulse 2.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,255,255,.35)}50%{box-shadow:0 0 0 14px rgba(255,255,255,0)}}
+.w{display:inline-block;animation:swim 7s ease-in-out infinite;animation-delay:var(--d,0s)}
+@keyframes swim{0%,100%{transform:translate(0,0) rotate(0)}25%{transform:translate(2px,-5px) rotate(-.6deg)}50%{transform:translate(0,-9px) rotate(0)}75%{transform:translate(-2px,-4px) rotate(.6deg)}}
+.lifter{width:1.05em;height:1.05em;vertical-align:-.16em;margin-left:.22em;overflow:visible}
+.hero .cta .btn{animation:swim 7s ease-in-out infinite}
+.hero .cta .btn:nth-child(2){animation-delay:-3s}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important;animation-delay:0s!important;animation-iteration-count:1!important;transition:none!important}.ring{stroke-dashoffset:0}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="mk" href="#home">JM</a>
+  <a href="#point">Mindset</a>
+  <a href="#collection">Collection</a>
+  <a href="#story">Story</a>
+  <a href="#join">Join</a>
+</nav>
+
+<header class="hero view on" id="home">
+  <div class="glow"></div>
+  <div class="logo">
+    <svg viewBox="0 0 200 200" aria-label="JM logo">
+      <rect class="ring" x="34" y="34" width="132" height="132" rx="6" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="3"/>
+      <text class="lt lj" x="67" y="122" text-anchor="middle">J</text>
+      <text class="lt lm" x="123" y="122" text-anchor="middle">M</text>
+    </svg>
+  </div>
+  <div class="welcome">
+    <div class="eyebrow w" style="--d:-5s">Welcome</div>
+    <h1><span class="w" style="--d:0s">Welcome</span> <span class="w" style="--d:-.8s">to</span> <span class="w" style="--d:-1.6s">our</span> <span class="w" style="--d:-2.4s">team,</span> <em><span class="w" style="--d:-3.2s">champion.</span><svg class="lifter w" style="--d:-4s" viewBox="0 0 60 60" fill="#f5f5f7" stroke="#f5f5f7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="30" cy="17" r="5" stroke="none"/><path d="M17 26h26l-5 19H22z" stroke-width="2"/><path d="M26 44l-2 14M34 44l2 14" stroke-width="5" fill="none"/><line x1="18" y1="28" x2="12" y2="32" stroke-width="5.5"><animate attributeName="y2" values="32;8;8;32" keyTimes="0;.45;.55;1" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;0 0 1 1;.4 0 .2 1"/></line><line x1="42" y1="28" x2="48" y2="32" stroke-width="5.5"><animate attributeName="y2" values="32;8;8;32" keyTimes="0;.45;.55;1" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;0 0 1 1;.4 0 .2 1"/></line><g><animateTransform attributeName="transform" type="translate" values="0 0;0 -24;0 -24;0 0" keyTimes="0;.45;.55;1" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines=".4 0 .2 1;0 0 1 1;.4 0 .2 1"/><line x1="1" y1="32" x2="59" y2="32" stroke-width="3"/><rect x="1" y="24" width="5" height="16" rx="1" stroke="none"/><rect x="54" y="24" width="5" height="16" rx="1" stroke="none"/></g></svg></em></h1>
+  </div>
+  <div class="cta">
+    <a class="btn p" href="#collection">See the collection</a>
+    <a class="btn" href="#story">Our story</a>
+  </div>
+  
+</header>
+
+<section id="point" class="view pt">
+  <div class="eyebrow">The point</div>
+  <h2>Nobody sees the work. <span>Everyone sees the result.</span></h2>
+  <div class="cols">
+    <div><b>Built in silence</b><span>The early mornings, the empty gym, the sets no one counts.</span></div>
+    <div><b>No excuses</b><span>Tired is a feeling. Done is a decision.</span></div>
+    <div><b>Wear the mindset</b><span>Clothing for people who keep showing up.</span></div>
+  </div>
+</section>
+
+<section id="collection" class="view">
+  <div class="eyebrow">The collection</div>
+  <h2>Three pieces. <span>One mindset.</span></h2>
+  <div class="grid">
+    <article class="card">
+      <div class="tee"><svg viewBox="0 0 200 200"><path d="M70 20l-50 28 18 40 22-10v102h80V78l22 10 18-40-50-28c-6 14-18 22-30 22S76 34 70 20z" fill="#141417" stroke="rgba(255,255,255,.2)"/><text x="100" y="110" text-anchor="middle" font-family="Instrument Serif,serif" font-size="34" fill="#f5f5f7">JM</text></svg></div>
+      <div class="num">01</div><h3>The Signature</h3>
+      <p>Clean chest mark. Nothing loud, nothing extra.</p>
+      <span class="tag">Coming soon</span>
+    </article>
+    <article class="card">
+      <div class="tee"><svg viewBox="0 0 200 200"><path d="M70 20l-50 28 18 40 22-10v102h80V78l22 10 18-40-50-28c-6 14-18 22-30 22S76 34 70 20z" fill="#141417" stroke="rgba(255,255,255,.2)"/><text x="100" y="100" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="11" fill="#f5f5f7" letter-spacing="2">ONE MORE SET</text><text x="100" y="118" text-anchor="middle" font-family="Inter,sans-serif" font-weight="300" font-size="11" fill="rgba(245,245,247,.6)" letter-spacing="2">NO EXCUSES</text></svg></div>
+      <div class="num">02</div><h3>One More Set</h3>
+      <p>The words you hear when your body says stop.</p>
+      <span class="tag">Coming soon</span>
+    </article>
+    <article class="card">
+      <div class="tee"><svg viewBox="0 0 200 200"><path d="M70 20l-50 28 18 40 22-10v102h80V78l22 10 18-40-50-28c-6 14-18 22-30 22S76 34 70 20z" fill="#141417" stroke="rgba(255,255,255,.2)"/><text x="100" y="105" text-anchor="middle" font-family="Inter,sans-serif" font-weight="600" font-size="11" fill="#f5f5f7" letter-spacing="2">BUILT IN SILENCE</text></svg></div>
+      <div class="num">03</div><h3>Built in Silence</h3>
+      <p>For the ones who let the results do the talking.</p>
+      <span class="tag">Coming soon</span>
+    </article>
+  </div>
+</section>
+
+<section id="story" class="view">
+  <div class="story">
+    <div class="eyebrow">The story</div>
+    <h2>Why JM <span>exists.</span></h2>
+    <p>JM started with a simple thought: <strong>pain is temporary, purpose is forever.</strong> Every rep is a small promise you keep to yourself.</p>
+    <p>We make clothing for people who train, who grind and who don’t need an audience. Made for our own neighborhood first, and for every champion who wants to join the team.</p>
+  </div>
+</section>
+
+<section id="join" class="view join">
+  <div class="eyebrow">Join the team</div>
+  <h2>A brand you’ll actually <span>want to wear.</span></h2>
+  <div class="cta">
+    <a class="btn p" href="#home">Back to home</a>
+    <a class="btn" href="#collection">See the collection</a>
+  </div>
+  <div class="sub">Drop one is on its way</div>
+</section>
+
+<footer>
+  <div class="mk">JM</div>
+  <div style="margin-top:6px">Built in silence. © 2026 JM. All rights reserved.</div>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.15});
+  els.forEach(function(e){io.observe(e);});
+})();
+</script>
+<script>
+(function(){
+  var views=document.querySelectorAll('.view'),links=document.querySelectorAll('nav a');
+  function go(){
+    var id=(location.hash||'#home').slice(1),v=document.getElementById(id);
+    if(!v||!v.classList.contains('view'))id='home';
+    views.forEach(function(x){x.classList.toggle('on',x.id===id);});
+    links.forEach(function(a){a.classList.toggle('act',a.getAttribute('href')==='#'+id);});
+    window.scrollTo(0,0);
+  }
+  addEventListener('hashchange',go);go();
+})();
+</script>
+</body>
+</html>
